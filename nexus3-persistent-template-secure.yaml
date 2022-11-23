@@ -40,7 +40,7 @@ objects:
             command:
               - "/bin/bash"
               - "-c"
-              - "curl -o /tmp/nexus-functions -s https://raw.githubusercontent.com/audomsak/openshift-sonatype-nexus/master/scripts/nexus-functions; source /tmp/nexus-functions; add_nexus3_redhat_repos admin admin123 http://${SERVICE_NAME}:8081"
+              - "curl -o /tmp/nexus-functions -s https://raw.githubusercontent.com/audomsak/openshift-sonatype-nexus/master/scripts/nexus-functions; source /tmp/nexus-functions; nexus_password=$(cat /nexus-data/admin.password); add_nexus3_redhat_repos admin $nexus_password http://${SERVICE_NAME}:8081"
       type: Recreate
     template:
       metadata:
