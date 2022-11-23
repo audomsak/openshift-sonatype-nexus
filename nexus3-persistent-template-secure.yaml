@@ -79,8 +79,10 @@ objects:
             timeoutSeconds: 1
           resources:
             limits:
+              cpu: ${MAX_CPU}
               memory: ${MAX_MEMORY}
             requests:
+              cpu: 500m
               memory: 512Mi
           terminationMessagePath: /dev/termination-log
           volumeMounts:
@@ -167,3 +169,8 @@ parameters:
   name: MAX_MEMORY
   required: true
   value: 4Gi
+- description: Max CPU allocated to the Nexus pod
+  displayName: Max CPU
+  name: MAX_CPU
+  required: true
+  value: 2
