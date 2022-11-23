@@ -173,4 +173,4 @@ parameters:
   displayName: Max CPU
   name: MAX_CPU
   required: true
-  value: 2
+  value: 2000m
